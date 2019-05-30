@@ -66,15 +66,10 @@ public class TcMailApplicationTests {
     @Resource
     private RedisUtil redis;
 	
-	/*@Test
+	@Test
 	public void contextLoads() {
-		Uorder uorder = new Uorder();
-		uorder.setPaystatu("待支付");
-		Orderdetail od = new Orderdetail();
-		uom.insertUorder(uorder);
-		od.setOrderid(uorder.getId());
-		odm.insert(od);
-	}*/
+		System.out.println(gm.findThereLevelType());
+	}
 	
 	@Test 
 	public void SMS() {

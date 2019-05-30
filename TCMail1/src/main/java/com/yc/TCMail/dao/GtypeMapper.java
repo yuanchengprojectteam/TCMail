@@ -27,4 +27,8 @@ public interface GtypeMapper {
     int updateByPrimaryKeySelective(Gtype record);
 
     int updateByPrimaryKey(Gtype record);
+
+	List<Gtype> findThereLevelType();
+    
+   
 }

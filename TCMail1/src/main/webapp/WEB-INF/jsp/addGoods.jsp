@@ -20,10 +20,9 @@
 
 	function query() {
 		$('#dg').datagrid('load', {
-			name : $("#name").textbox("getValue"),
-			price : $("#price").textbox("getValue"),
+			
 			typeName : $("#typeName").textbox("getValue"),
-			regtime : $("#regtime").textbox("getValue"),
+			
 		});
 	}
 
@@ -200,18 +199,14 @@
 						class="lab">商品的积分：</span><input id="addpoint"
 						class="easyui-textbox" name="point"><br> <span
 						class="lab">商品的价格：</span><input id="price" class="easyui-textbox"
-						name="price"><br> <span class="lab">商品类型：</span><input
+						name="price"><br> <span class="lab"> 商品类型：</span><input
 						id="typeName" class="easyui-combobox" name="tid"
 						data-options="valueField:'id',textField:'text',url:'getdata'"><br>
-					<span class="lab">商品的尺寸：</span><input id="addsize"
+					<span class="lab">商品的尺寸：</span> <input id="addsize"
 						class="easyui-textbox" name="size"><br> <span
 						class="lab">商品图片：</span><input id="addimage"
 						class="easyui-filebox" name="image1"
 						data-options="prompt:'Choose a file...'" style="width: 50%"><br>
-					<span class="lab">商品详情：</span><input id="typeimage"
-						class="easyui-filebox" name="msgImage1"
-						data-options="prompt:'Choose a file...',separator:';',multiple:true"
-						style="width: 50%"><br>
 				</form>
 			</div>
 			<div data-options="region:'south',border:false"
