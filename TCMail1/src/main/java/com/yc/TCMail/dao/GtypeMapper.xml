@@ -67,6 +67,14 @@
   <sql id="Base_Column_List">
     id, name, pid
   </sql>
+  
+  <!-- 查找所有三级分类 -->
+  <select id="findThereLevelType" resultMap="BaseResultMap">
+  	select * from gtype where pid in (select id from gtype where pid is not null)
+  </select>
+  
+  
+  
   <select id="selectByExample" parameterType="com.yc.TCMail.bean.GtypeExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

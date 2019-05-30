@@ -16,14 +16,13 @@ public class indexController {
 	private GoodsBiz gbiz;
 	
 	@RequestMapping("addGoods")
-	public void addGoods() {
-		
+	public String addGoods() {
+		return "addGoods";
 	}
 	
 	@RequestMapping("getdata")
 	@ResponseBody
-	public Object getData() {
-		
+	public List<Gtype> getData() {
 		return gbiz.getThreeLevelType();
 	}
 }
