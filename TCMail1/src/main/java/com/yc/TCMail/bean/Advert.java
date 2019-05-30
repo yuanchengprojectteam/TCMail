@@ -1,6 +1,7 @@
 package com.yc.TCMail.bean;
 
-public class Advert {
+public class Advert implements java.io.Serializable{
+	private static final long serialVersionUID = 1L;
     private Integer id;
 
     private String path;

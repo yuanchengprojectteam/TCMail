@@ -1,6 +1,7 @@
 package com.yc.TCMail.bean;
 
-public class Car {
+public class Car implements java.io.Serializable{
+	private static final long serialVersionUID = 1L;
     private Integer id;
 
     private Integer gid;
@@ -10,8 +11,32 @@ public class Car {
     private Integer num;
 
     private Integer sid;
+    
+    
+    private Goods goods;
+	private Integer totalPrice;
+	
+	
+	
+    
 
-    public Integer getId() {
+    public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+
+	public Integer getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(Integer totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public Integer getId() {
         return id;
     }
 

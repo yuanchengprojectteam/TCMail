@@ -1,8 +1,11 @@
 package com.yc.TCMail.bean;
 
-public class User {
-    private Integer id;
+import javax.validation.constraints.NotEmpty;
 
+public class User implements java.io.Serializable{
+	private static final long serialVersionUID = 1L;
+    private Integer id;
+    @NotEmpty(message="用户名不能为空")
     private String account;
 
     private Integer age;
@@ -20,7 +23,7 @@ public class User {
     private String name;
 
     private String phone;
-
+    @NotEmpty(message="密码不能为空")
     private String pwd;
 
     private String realname;

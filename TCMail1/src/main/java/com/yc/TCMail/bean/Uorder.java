@@ -1,8 +1,10 @@
 package com.yc.TCMail.bean;
 
 import java.util.Date;
+import java.util.List;
 
-public class Uorder {
+public class Uorder implements java.io.Serializable{
+	private static final long serialVersionUID = 1L;
     private Integer id;
 
     private Integer aid;
@@ -24,6 +26,32 @@ public class Uorder {
     private Date recivetime;
 
     private Integer visiable;
+    
+    
+    
+    private Address addr;
+	// private Goods goods;
+	private List<Orderdetail> details;
+
+	private User user;
+	/* private Orderdetail details; */
+
+	private List<Address> addrList;
+
+	
+	public Uorder() {}
+	
+	public Uorder(Integer id, Integer uid, String paystatu,
+			 String ordertime, Double totalprice,  Integer visiable) {
+		super();
+		this.id = id;
+		this.uid = uid;
+		this.paystatu = paystatu;
+		this.ordertime = ordertime;
+		this.totalprice = totalprice;
+		this.visiable = visiable;
+	}
+    
 
     public Integer getId() {
         return id;

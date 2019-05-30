@@ -1,8 +1,10 @@
 package com.yc.TCMail.bean;
 
 import java.util.Date;
+import java.util.List;
 
-public class Goods {
+public class Goods implements java.io.Serializable{
+	private static final long serialVersionUID = 1L;
     private Integer id;
 
     private Integer commnum;
@@ -32,8 +34,22 @@ public class Goods {
     private Integer price;
 
     private String size;
+    
+    private List<Image> images;
+    
+    
+    
+    
 
-    public Integer getId() {
+    public List<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(List<Image> images) {
+		this.images = images;
+	}
+
+	public Integer getId() {
         return id;
     }
 
