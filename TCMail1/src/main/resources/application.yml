@@ -1,0 +1,112 @@
+spring:
+  # Spring数据源配置
+  datasource:
+    url: jdbc:mysql://localhost/tcmail
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: a
+  session:
+    store-type: none
+    
+    #    文件上传配置
+  resources: 
+    staticLocations:
+      - file:/d:/rcvFile/
+      - classpath:/static/
+      - classpath:/public/
+
+
+  # jpa持久层框架 配置  
+  jpa: 
+    database: MYSQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+    # 第一次使用后请将该行注释,该配置为自动建表，如不小心使用会导致数据库表数据全部被删除
+      #ddl-auto: create
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy 
+    properties: 
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+      
+     
+  
+  # SpringMVC配置
+  mvc:
+    view:
+      prefix: WEB-INF/jsp/
+      suffix: .jsp
+      
+  # 发送邮件配置
+  mail: 
+    # 邮件服务器地址
+    host: smtp.qq.com
+    username: 1371490392@qq.com
+    password: pcxzfldpeqtsgifb
+    default-encoding: UTF-8
+    formMail:
+      addr: 1371490392@qq.com
+   
+  # log4j配置 
+logging:
+  level:
+    root: ERROR
+    com.yc.TCMail: DEBUG
+    
+  #redis配置  
+redis:
+  hostname: 127.0.0.1
+  port: 6379
+  password:
+  timeout: 10000
+  maxIdle: 300
+  maxTotal: 1000
+  maxWaitMillis: 1000
+  minEvictableIdleTimeMillis: 300000
+  numTestsPerEvictionRun: 1024
+  timeBetweenEvictionRunsMillis: 30000
+  testOnBorrow: true
+  testWhileIdle: true
+
+  #短信验证码配置
+alMsg:
+  product: Dysmsapi
+  domail: dysmsapi.aliyuncs.com
+  accessKeyId: 
+  accessKeySecret: 
+  endpoint: http://31269193.mns.cn-beijing.aliyuncs.com/
+
+  #阿里云OSS对象存储服务
+lximage:
+  endpoint:  oss-cn-beijing.aliyuncs.com
+  keyid:  LTAIITWT4M4azCLU
+  keysecret:  9d7R60FOUvIuKAOKZDMS7nAwA7777X
+  bucketname1:  doki-l
+  filehost:  UploadFile
+  
+  #分页配置
+  pagehelper:
+    helper-dialect: mysql
+    reasonable: true
+    support-methods-arguments: true
+    params: 
+    
+  #支付宝扫码支付配置
+pay:  
+   alipay:   
+     gatewayUrl: https://openapi.alipaydev.com/gateway.do 
+     appid: 2016100100638754
+     appPrivateKey:  MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDBV94GpgM9jcMQAbmx3U/pEl6QFpEnX+6nNs3SCQf26wwUJ+lJDEikYpyvryAAVVEIT0Tm8bniUfvNHd935/XRTOO3dCsngh1gUOrUAnbZiZJNUSCjN/xaej4enyl4oAJ1jPQ8jIVwx4t0RZPEfYeWiPQ08huq8fSdShl1tgQDcqRaMPA+40Civgp68mL2y3lqDAe3kWQAicWexszBmaBO64PqOoTtC5llmk9iLBTrgapGt6++4j3bDj7ZZ6fM4kc91EbzUtsYkq5T/ODhJjUMNOJ5v4vlXsajG+9TrIQD1ctX2+kNg0Kf57omlVtaf8UpCk9g+ey6PFdzHumhS8GTAgMBAAECggEBAKKYzZzTwofij3gHq24ci9ab3zDX+ayebersGP2ZILyUAW11/yeyj+jHEbRh18zP8zzExVJfWY8umU9v3v5M8hrZyev/Y0dvklrs0gAILoFVw9cH8iWxsKU6hsFj4xGRp1/KcZ/2IUauWeYnmVS2qO99L7rTHVeO8cPRjEXFE+z85vdBMrheZsLyVFAhm2ru9lZiaJI4x+/8mfZWsHAsxpz1jrQx/xCiJn+Vg7vkwxt//pbUuxWrCmUFlMe0Ejkh8D5XcP/5IfIsBuCD4jKSMu0W3uBazYVJwJhQpSzHFbQSH3OgO7jJqcLqrRcfSu+ArD2RZufHIwGAGZNql1Zh08kCgYEA6dEpwsIbNMefWRni1szU9uJDr1De0T5RmDV+hacobyulCSK05a8w0Uy2HZWslCqCpDmSyan6EXgEPu/ro44uPeQ/YfBwGTm3AocZdKa9F1eUrMbokUhLjOA+di8zDVrRToUAiwmdA8WUKKhfg2E2utlW1IUHZmcEomYLrm/eYHcCgYEA06+yDUvNFKkyYZHJEHNu4lZ4Nn2u5gJUXyvwjBM2u6lx91KMQO9EhnnsAXLn/QxlMhSdvmiFy6c9QG1uUI3QNdicKFKAkz+56YcVED1hp3TAQl+QZFpQSrNZq0zRexrHk9Sn6jEKbk1AY8i9UuoHYwIJV5Sw1qZdQXZFQdloKsUCgYA+1oy/n8UKCUAlBRT2n3P4qdSA8F4BpBrvqijHqKXwQq2G6AHv3IZlKZWkG86Wv1n+4s41Tm47daLGe1o7yYFZ9tal7qVh0iYCEubfd9RHyqzVRlvId8J+KOIAhyzUQP0ReiMsOrgtBFOOHboVp/G6g6CXWu0jMzqGnqAzEDOWfwKBgQDLJJRNxixsY2KB15GIQ/5pHmoGgN5SxHGLU3NoORgRRy6jFYia2AJ+uooNaePPJxIF2Vr32v5qzXcuWNXAYBcrVU+mMmZI6KLUxFkmWIFaXeQSzfqXE0RyK2MlzHZLGQvlhfIOADnuWBwupflplES6cr3cWkjJ9KURqRoVczlPsQKBgQDPa0iSgHfZeydsk99qXGaWa6+Y0yTQwe8N1PEa6p5JNkLPP5HXdceHgnSHXwhk03fXO60VHEEVfC67vAeTtqlH1JBXJI3fmROcmf1KNMmpWwdrvxfiQKBGxn/OmLJNFNGCrzI9ZDoGBKMR8SWRGENoqGre23wo871Rp16d8KXp6g==
+     alipayPublicKey:  MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAynxt0EUXPBc6jfDok9RxMuRJ+y6Manqdv3qE8nBNjhlGsr5jabw1PoClEMNLt8M9hvzUfjKGPBAWn8j8knVjPcg/MolqxsWLhhcN/FXBx+Xl0n3OBXGpvTBbaj+xhLY/EADO+gZdCpQrxvpPYRHrIYLcvE93fmGFX9q+7ureFAbiQnGM0MKAsF/FVOAT1gQrX53RcM9b3ecVUmQ1bta3zJgcIgK7gSTeV4yy2vAM9rrMNQgQWnGCPhrjEO5Vl//5kLNKmVMmpQ1x+q0nTKtNRTccxxOHZjrlG46tjif2n0H8ZaMYQbVbLbqSziLrBXTKftwAVH610x+9fUwdu+DXYwIDAQAB
+     returnUrl:  http://47.102.133.31:8080/alipay.trade.page.pay-JAVA-UTF-8/return_url.jsp
+     notifyUrl:  http://47.102.133.31:8080/alipay.trade.page.pay-JAVA-UTF-8/notify_url.jsp
+
+  
+  
+  
+  
+  
+  
+  
+  
