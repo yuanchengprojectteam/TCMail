@@ -1,10 +1,8 @@
 package com.yc.TCMail.bean;
 
 import java.util.Date;
-import java.util.List;
 
-public class Shop implements java.io.Serializable{
-	private static final long serialVersionUID = 1L;
+public class Shop {
     private Integer id;
 
     private String addr;
@@ -20,21 +18,8 @@ public class Shop implements java.io.Serializable{
     private Integer uid;
 
     private String describe;
-    
-    private List<Goods> good;
-    
-    
-    
 
-    public List<Goods> getGood() {
-		return good;
-	}
-
-	public void setGood(List<Goods> good) {
-		this.good = good;
-	}
-
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -12,7 +12,7 @@
         <property name="suppressAllComments" value="true" />
     </commentGenerator>
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://127.0.0.1/tcmail" userId="root" password="a">
+			connectionURL="jdbc:mysql://47.102.133.31/tcmail" userId="root" password="12345678">
 		</jdbcConnection>
 		<!-- 实体类包名 -->
 		<javaModelGenerator targetPackage="com.yc.TCMail.bean"
@@ -68,9 +68,6 @@
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table>
 		<table tableName="user">
-			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
-		</table>
-		<table tableName="totalreason">
 			<generatedKey column="id" sqlStatement="mysql" identity="true"/>
 		</table>
 		<table tableName="advert">

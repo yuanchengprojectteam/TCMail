@@ -1,7 +1,6 @@
 package com.yc.TCMail.bean;
 
-public class Totalreason implements java.io.Serializable{
-	private static final long serialVersionUID = 1L;
+public class Totalreason {
     private Integer id;
 
     private String orderstatu;

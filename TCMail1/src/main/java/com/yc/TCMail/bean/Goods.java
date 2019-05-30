@@ -1,10 +1,8 @@
 package com.yc.TCMail.bean;
 
 import java.util.Date;
-import java.util.List;
 
-public class Goods implements java.io.Serializable{
-	private static final long serialVersionUID = 1L;
+public class Goods {
     private Integer id;
 
     private Integer commnum;
@@ -23,33 +21,7 @@ public class Goods implements java.io.Serializable{
 
     private Integer salenum;
 
-    private String color;
-
-    private String image;
-
-    private Integer num;
-
-    private Integer point;
-
-    private Integer price;
-
-    private String size;
-    
-    private List<Image> images;
-    
-    
-    
-    
-
-    public List<Image> getImages() {
-		return images;
-	}
-
-	public void setImages(List<Image> images) {
-		this.images = images;
-	}
-
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -119,53 +91,5 @@ public class Goods implements java.io.Serializable{
 
     public void setSalenum(Integer salenum) {
         this.salenum = salenum;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public Integer getNum() {
-        return num;
-    }
-
-    public void setNum(Integer num) {
-        this.num = num;
-    }
-
-    public Integer getPoint() {
-        return point;
-    }
-
-    public void setPoint(Integer point) {
-        this.point = point;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
     }
 }

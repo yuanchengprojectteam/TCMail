@@ -11,12 +11,6 @@
     <result column="brand" jdbcType="VARCHAR" property="brand" />
     <result column="discount" jdbcType="DOUBLE" property="discount" />
     <result column="salenum" jdbcType="INTEGER" property="salenum" />
-    <result column="color" jdbcType="VARCHAR" property="color" />
-    <result column="image" jdbcType="VARCHAR" property="image" />
-    <result column="num" jdbcType="INTEGER" property="num" />
-    <result column="point" jdbcType="INTEGER" property="point" />
-    <result column="price" jdbcType="INTEGER" property="price" />
-    <result column="size" jdbcType="VARCHAR" property="size" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -77,8 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, commnum, name, sid, regtime, tid, brand, discount, salenum, color, image, num, 
-    point, price, size
+    id, commnum, name, sid, regtime, tid, brand, discount, salenum
   </sql>
   <select id="selectByExample" parameterType="com.yc.TCMail.bean.GoodsExample" resultMap="BaseResultMap">
     select
@@ -116,14 +109,10 @@
     </selectKey>
     insert into goods (commnum, name, sid, 
       regtime, tid, brand, discount, 
-      salenum, color, image, 
-      num, point, price, 
-      size)
+      salenum)
     values (#{commnum,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sid,jdbcType=INTEGER}, 
       #{regtime,jdbcType=DATE}, #{tid,jdbcType=INTEGER}, #{brand,jdbcType=VARCHAR}, #{discount,jdbcType=DOUBLE}, 
-      #{salenum,jdbcType=INTEGER}, #{color,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
-      #{num,jdbcType=INTEGER}, #{point,jdbcType=INTEGER}, #{price,jdbcType=INTEGER}, 
-      #{size,jdbcType=VARCHAR})
+      #{salenum,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.yc.TCMail.bean.Goods">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -155,24 +144,6 @@
       <if test="salenum != null">
         salenum,
       </if>
-      <if test="color != null">
-        color,
-      </if>
-      <if test="image != null">
-        image,
-      </if>
-      <if test="num != null">
-        num,
-      </if>
-      <if test="point != null">
-        point,
-      </if>
-      <if test="price != null">
-        price,
-      </if>
-      <if test="size != null">
-        size,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="commnum != null">
@@ -198,24 +169,6 @@
       </if>
       <if test="salenum != null">
         #{salenum,jdbcType=INTEGER},
-      </if>
-      <if test="color != null">
-        #{color,jdbcType=VARCHAR},
-      </if>
-      <if test="image != null">
-        #{image,jdbcType=VARCHAR},
-      </if>
-      <if test="num != null">
-        #{num,jdbcType=INTEGER},
-      </if>
-      <if test="point != null">
-        #{point,jdbcType=INTEGER},
-      </if>
-      <if test="price != null">
-        #{price,jdbcType=INTEGER},
-      </if>
-      <if test="size != null">
-        #{size,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -255,24 +208,6 @@
       <if test="record.salenum != null">
         salenum = #{record.salenum,jdbcType=INTEGER},
       </if>
-      <if test="record.color != null">
-        color = #{record.color,jdbcType=VARCHAR},
-      </if>
-      <if test="record.image != null">
-        image = #{record.image,jdbcType=VARCHAR},
-      </if>
-      <if test="record.num != null">
-        num = #{record.num,jdbcType=INTEGER},
-      </if>
-      <if test="record.point != null">
-        point = #{record.point,jdbcType=INTEGER},
-      </if>
-      <if test="record.price != null">
-        price = #{record.price,jdbcType=INTEGER},
-      </if>
-      <if test="record.size != null">
-        size = #{record.size,jdbcType=VARCHAR},
-      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -288,13 +223,7 @@
       tid = #{record.tid,jdbcType=INTEGER},
       brand = #{record.brand,jdbcType=VARCHAR},
       discount = #{record.discount,jdbcType=DOUBLE},
-      salenum = #{record.salenum,jdbcType=INTEGER},
-      color = #{record.color,jdbcType=VARCHAR},
-      image = #{record.image,jdbcType=VARCHAR},
-      num = #{record.num,jdbcType=INTEGER},
-      point = #{record.point,jdbcType=INTEGER},
-      price = #{record.price,jdbcType=INTEGER},
-      size = #{record.size,jdbcType=VARCHAR}
+      salenum = #{record.salenum,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -326,24 +255,6 @@
       <if test="salenum != null">
         salenum = #{salenum,jdbcType=INTEGER},
       </if>
-      <if test="color != null">
-        color = #{color,jdbcType=VARCHAR},
-      </if>
-      <if test="image != null">
-        image = #{image,jdbcType=VARCHAR},
-      </if>
-      <if test="num != null">
-        num = #{num,jdbcType=INTEGER},
-      </if>
-      <if test="point != null">
-        point = #{point,jdbcType=INTEGER},
-      </if>
-      <if test="price != null">
-        price = #{price,jdbcType=INTEGER},
-      </if>
-      <if test="size != null">
-        size = #{size,jdbcType=VARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -356,13 +267,7 @@
       tid = #{tid,jdbcType=INTEGER},
       brand = #{brand,jdbcType=VARCHAR},
       discount = #{discount,jdbcType=DOUBLE},
-      salenum = #{salenum,jdbcType=INTEGER},
-      color = #{color,jdbcType=VARCHAR},
-      image = #{image,jdbcType=VARCHAR},
-      num = #{num,jdbcType=INTEGER},
-      point = #{point,jdbcType=INTEGER},
-      price = #{price,jdbcType=INTEGER},
-      size = #{size,jdbcType=VARCHAR}
+      salenum = #{salenum,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

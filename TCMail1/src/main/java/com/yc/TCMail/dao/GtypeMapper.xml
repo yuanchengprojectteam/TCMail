@@ -5,7 +5,6 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="pid" jdbcType="INTEGER" property="pid" />
-    <result column="sunid" jdbcType="INTEGER" property="sunid" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -66,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, pid, sunid
+    id, name, pid
   </sql>
   <select id="selectByExample" parameterType="com.yc.TCMail.bean.GtypeExample" resultMap="BaseResultMap">
     select
@@ -102,10 +101,8 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into gtype (name, pid, sunid
-      )
-    values (#{name,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, #{sunid,jdbcType=INTEGER}
-      )
+    insert into gtype (name, pid)
+    values (#{name,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.yc.TCMail.bean.Gtype">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -119,9 +116,6 @@
       <if test="pid != null">
         pid,
       </if>
-      <if test="sunid != null">
-        sunid,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -129,9 +123,6 @@
       </if>
       <if test="pid != null">
         #{pid,jdbcType=INTEGER},
-      </if>
-      <if test="sunid != null">
-        #{sunid,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -153,9 +144,6 @@
       <if test="record.pid != null">
         pid = #{record.pid,jdbcType=INTEGER},
       </if>
-      <if test="record.sunid != null">
-        sunid = #{record.sunid,jdbcType=INTEGER},
-      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -165,8 +153,7 @@
     update gtype
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      pid = #{record.pid,jdbcType=INTEGER},
-      sunid = #{record.sunid,jdbcType=INTEGER}
+      pid = #{record.pid,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -180,17 +167,13 @@
       <if test="pid != null">
         pid = #{pid,jdbcType=INTEGER},
       </if>
-      <if test="sunid != null">
-        sunid = #{sunid,jdbcType=INTEGER},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yc.TCMail.bean.Gtype">
     update gtype
     set name = #{name,jdbcType=VARCHAR},
-      pid = #{pid,jdbcType=INTEGER},
-      sunid = #{sunid,jdbcType=INTEGER}
+      pid = #{pid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

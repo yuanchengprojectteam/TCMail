@@ -1,7 +1,6 @@
 package com.yc.TCMail.bean;
 
-public class Address implements java.io.Serializable{
-	private static final long serialVersionUID = 1L;
+public class Address {
     private Integer id;
 
     private Integer level;
@@ -15,50 +14,8 @@ public class Address implements java.io.Serializable{
     private String recvaddr;
 
     private String detailaddr;
-    
-    
-    private String province;
-	private String city;
-	private String district;
-	
-	private User user;
-	
-	
-	
 
-    public String getProvince() {
-		return province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getDistrict() {
-		return district;
-	}
-
-	public void setDistrict(String district) {
-		this.district = district;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 

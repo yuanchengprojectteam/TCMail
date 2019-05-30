@@ -1,14 +1,11 @@
 package com.yc.TCMail.bean;
 
-public class Gtype implements java.io.Serializable{
-	private static final long serialVersionUID = 1L;
+public class Gtype {
     private Integer id;
 
     private String name;
 
     private Integer pid;
-
-    private Integer sunid;
 
     public Integer getId() {
         return id;
@@ -32,13 +29,5 @@ public class Gtype implements java.io.Serializable{
 
     public void setPid(Integer pid) {
         this.pid = pid;
-    }
-
-    public Integer getSunid() {
-        return sunid;
-    }
-
-    public void setSunid(Integer sunid) {
-        this.sunid = sunid;
     }
 }
