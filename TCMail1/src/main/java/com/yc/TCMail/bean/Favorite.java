@@ -2,8 +2,7 @@ package com.yc.TCMail.bean;
 
 import java.util.Date;
 
-public class Favorite implements java.io.Serializable{
-	private static final long serialVersionUID = 1L;
+public class Favorite {
     private Integer id;
 
     private Date ftime;
@@ -13,30 +12,8 @@ public class Favorite implements java.io.Serializable{
     private Integer shopid;
 
     private Integer uid;
-    
-    private Goods good;
-	private Shop shop;
-	
-	
-	
 
-    public Goods getGood() {
-		return good;
-	}
-
-	public void setGood(Goods good) {
-		this.good = good;
-	}
-
-	public Shop getShop() {
-		return shop;
-	}
-
-	public void setShop(Shop shop) {
-		this.shop = shop;
-	}
-
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 

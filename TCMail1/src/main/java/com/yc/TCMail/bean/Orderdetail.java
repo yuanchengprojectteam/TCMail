@@ -1,7 +1,6 @@
 package com.yc.TCMail.bean;
 
-public class Orderdetail implements java.io.Serializable{
-	private static final long serialVersionUID = 1L;
+public class Orderdetail {
     private Integer id;
 
     private Integer orderid;
@@ -9,22 +8,8 @@ public class Orderdetail implements java.io.Serializable{
     private Integer gid;
 
     private Integer num;
-    
-  //临时 退款金额
-  	private Integer retPrice;
-  	
-  	
-  	
 
-    public Integer getRetPrice() {
-		return retPrice;
-	}
-
-	public void setRetPrice(Integer retPrice) {
-		this.retPrice = retPrice;
-	}
-
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 

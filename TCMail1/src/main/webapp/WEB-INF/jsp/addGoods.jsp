@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>商品管理</title>
-	<link rel="stylesheet" type="text/css" href="js/easyui/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="js/easyui/themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="js/easyui/demo/demo.css">
-	<script type="text/javascript" src="js/easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="js/easyui/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../easyui/demo/demo.css">
+	<script type="text/javascript" src="../../easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../../easyui/jquery.easyui.min.js"></script>
 
 	<script type="text/javascript">
 		
@@ -240,6 +240,7 @@
 					<input  id="addname" class="easyui-textbox" name="id" type="hidden">
 	    			<span  class="lab">商品名称：</span><input  id="addname" class="easyui-textbox" name="name"><br>
 	    			<span  class="lab">商品颜色：</span><input  id="addcolor" class="easyui-textbox" name="color"><br>
+	    			<span  class="lab">商品规格：</span><input  id="addname" class="easyui-textbox" name="name"><br>
 	    			<span  class="lab">商品图片：</span><input id="addimage" class="easyui-filebox" name="path" data-options="prompt:'Choose a file...'" style="width:50%"><br>
 	    		</form>
 			</div>

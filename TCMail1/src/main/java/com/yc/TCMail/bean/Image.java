@@ -1,7 +1,6 @@
 package com.yc.TCMail.bean;
 
-public class Image implements java.io.Serializable{
-	private static final long serialVersionUID = 1L;
+public class Image {
     private Integer id;
 
     private Integer gid;

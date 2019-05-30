@@ -7,9 +7,6 @@
     <result column="norms" jdbcType="VARCHAR" property="norms" />
     <result column="gid" jdbcType="INTEGER" property="gid" />
     <result column="num" jdbcType="INTEGER" property="num" />
-    <result column="sid" jdbcType="INTEGER" property="sid" />
-    <result column="size" jdbcType="VARCHAR" property="size" />
-    <result column="tid" jdbcType="INTEGER" property="tid" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, color, norms, gid, num, sid, size, tid
+    id, color, norms, gid, num
   </sql>
   <select id="selectByExample" parameterType="com.yc.TCMail.bean.GoodsmsgExample" resultMap="BaseResultMap">
     select
@@ -107,11 +104,9 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into goodsmsg (color, norms, gid, 
-      num, sid, size, tid
-      )
+      num)
     values (#{color,jdbcType=VARCHAR}, #{norms,jdbcType=VARCHAR}, #{gid,jdbcType=INTEGER}, 
-      #{num,jdbcType=INTEGER}, #{sid,jdbcType=INTEGER}, #{size,jdbcType=VARCHAR}, #{tid,jdbcType=INTEGER}
-      )
+      #{num,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.yc.TCMail.bean.Goodsmsg">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -131,15 +126,6 @@
       <if test="num != null">
         num,
       </if>
-      <if test="sid != null">
-        sid,
-      </if>
-      <if test="size != null">
-        size,
-      </if>
-      <if test="tid != null">
-        tid,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="color != null">
@@ -153,15 +139,6 @@
       </if>
       <if test="num != null">
         #{num,jdbcType=INTEGER},
-      </if>
-      <if test="sid != null">
-        #{sid,jdbcType=INTEGER},
-      </if>
-      <if test="size != null">
-        #{size,jdbcType=VARCHAR},
-      </if>
-      <if test="tid != null">
-        #{tid,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -189,15 +166,6 @@
       <if test="record.num != null">
         num = #{record.num,jdbcType=INTEGER},
       </if>
-      <if test="record.sid != null">
-        sid = #{record.sid,jdbcType=INTEGER},
-      </if>
-      <if test="record.size != null">
-        size = #{record.size,jdbcType=VARCHAR},
-      </if>
-      <if test="record.tid != null">
-        tid = #{record.tid,jdbcType=INTEGER},
-      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -209,10 +177,7 @@
       color = #{record.color,jdbcType=VARCHAR},
       norms = #{record.norms,jdbcType=VARCHAR},
       gid = #{record.gid,jdbcType=INTEGER},
-      num = #{record.num,jdbcType=INTEGER},
-      sid = #{record.sid,jdbcType=INTEGER},
-      size = #{record.size,jdbcType=VARCHAR},
-      tid = #{record.tid,jdbcType=INTEGER}
+      num = #{record.num,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -232,15 +197,6 @@
       <if test="num != null">
         num = #{num,jdbcType=INTEGER},
       </if>
-      <if test="sid != null">
-        sid = #{sid,jdbcType=INTEGER},
-      </if>
-      <if test="size != null">
-        size = #{size,jdbcType=VARCHAR},
-      </if>
-      <if test="tid != null">
-        tid = #{tid,jdbcType=INTEGER},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -249,10 +205,7 @@
     set color = #{color,jdbcType=VARCHAR},
       norms = #{norms,jdbcType=VARCHAR},
       gid = #{gid,jdbcType=INTEGER},
-      num = #{num,jdbcType=INTEGER},
-      sid = #{sid,jdbcType=INTEGER},
-      size = #{size,jdbcType=VARCHAR},
-      tid = #{tid,jdbcType=INTEGER}
+      num = #{num,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
